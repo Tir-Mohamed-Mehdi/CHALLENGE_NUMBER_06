@@ -1,0 +1,153 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --Dark-cyan: #19a2ae;
+  --Very-dark-desaturated-blue: #2d3248;
+  --Dark-grayish-blue: #6a6f81;
+  --Dark-gray: #969696;
+
+  --font-size: 1.8rem;
+
+  --font-weight-400: 400;
+  --font-weight-700: 700;
+
+  --font-family: "Kumbh Sans", sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--Dark-cyan);
+  overflow: hidden;
+}
+
+.container {
+  width: 33rem;
+  text-align: center;
+  border-radius: 1.3rem;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgb(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.container > img {
+  position: absolute;
+  z-index: -1;
+}
+
+.container > img:first-child {
+  top: -80%;
+  left: -20%;
+}
+
+.container > img:nth-child(2) {
+  bottom: -100%;
+  right: -20%;
+}
+
+.container .container__cover {
+  background-image: url(/images/bg-pattern-card.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 14rem;
+  margin-bottom: 7rem;
+  position: relative;
+}
+
+.container .container__cover img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+/** this is the text styling */
+
+.container .container__text {
+  background-color: white;
+  margin-bottom: 3rem;
+}
+
+.container .container__text .name {
+  margin-bottom: 5rem;
+  position: relative;
+}
+
+.container .container__text .name::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(211, 211, 211, 0.4);
+  left: 0;
+  bottom: -3rem;
+}
+
+.container .container__text .name h2 {
+  text-transform: capitalize;
+  color: var(--Very-dark-desaturated-blue);
+  font-size: var(--font-size);
+  margin-bottom: 1.1rem;
+}
+
+.container .container__text .name h2 span {
+  color: var(--Dark-gray);
+  font-weight: var(--font-weight-400);
+}
+
+.container .container__text p {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  color: var(--Dark-gray);
+}
+
+.container .container__text .number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.container .container__text .number h3 {
+  font-size: 1.8rem;
+  color: var(--Very-dark-desaturated-blue);
+  line-height: 1.7;
+}
+
+.container .container__text .number p {
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 500px) {
+  .container > img:first-child {
+    top: -40%;
+    left: -65%;
+    width: 50rem;
+  }
+
+  .container > img:nth-child(2) {
+    width: 60rem;
+
+    bottom: -30%;
+    right: -90%;
+  }
+}
